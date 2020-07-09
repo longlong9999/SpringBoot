@@ -1,0 +1,129 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/admin/index">
+<head>
+<title>Employee</title>
+<script>
+	$(document).ready(function() {
+		$('#table_id').DataTable();
+	});
+</script>
+
+<style>
+.container {
+	margin-top: 10px;
+	max-width: 750px;
+}
+</style>
+
+
+</head>
+<body>
+
+		<div class="container" layout:fragment="content">
+
+	
+		
+		<h4 style="padding-left: 310px">Employee List</h4>
+		<!-- <button class="btn btn-success btn" data-toggle="modal" data-target="#myModal">Creat New</button> -->
+		<table class="table table-bordered" id="table_id" style="width: 800px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th style="width: 210px;">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="emp : ${employees}" th:object="${emp}">
+					<td th:utext="*{id}">..</td>
+					<td th:utext="*{name}">..</td>
+					<td th:utext="*{phone}"></td>
+					<td th:utext="*{email}"></td>
+					<td th:utext="*{branch}"></td>
+					<td><a th:href="@{/admin/form(id=*{id})}"
+						class="btn btn-info btn-sm  " role="button" data-target="#upDate">Update</a>
+						<a th:href="@{/admin/delete(id=*{id})}" class="btn btn-danger btn-sm"
+						role="button">Delete</a> <a th:href="@{/admin/detail(id=*{id})}"
+						class="btn btn-primary btn-sm"> Detail </a></td>
+				</tr>
+
+			</tbody>
+		</table>
+		
+		
+		<div class="containe">
+ 
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+	</div>
+
+			
+		
+
+
+
+
+	
+
+<!-- <form th:action="@{/admin/insert}" method="post" th:object="${employee}">
+						<div id='msg' />
+						Name:<br /> <input type="text" class="form-control" name="name"
+							required="" /> <br /> Phone:<br /> <input type="text"
+							class="form-control" name="phone" required="" /> <br /> Email:<br />
+						<input type="email" class="form-control" name="email" required="" />
+						<br /> Department:<br /> <input type="text" class="form-control"
+							name="branch" required="" /> <br />
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form> -->
+
+
+	
+	
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
+     
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+127.0.0.1 - - [21/May/2020:11:26:28 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:26:29 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 626
+127.0.0.1 - - [21/May/2020:11:27:58 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:27:59 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 582
+127.0.0.1 - - [21/May/2020:11:31:02 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:31:03 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:31:04 +0700] "GET /JavaWebApplication/response.jsp?subject_id=&submit=G%3Fi+y%EAu+c%3Fu HTTP/1.1" 404 742
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:32:22 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:32:23 +0700] "GET /JavaWebApplication/response.jsp?subject_id=&submit=G%3Fi+y%EAu+c%3Fu HTTP/1.1" 200 133
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:32:45 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+127.0.0.1 - - [21/May/2020:11:33:29 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:33:30 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+127.0.0.1 - - [21/May/2020:11:37:14 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:37:14 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:37:16 +0700] "GET /JavaWebApplication/response.jsp?subject_id=&submit=Gui+yeu+cau HTTP/1.1" 200 133
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:39:49 +0700] "GET /JavaWebApplication/ HTTP/1.1" 200 573
+0:0:0:0:0:0:0:1 - - [21/May/2020:11:39:53 +0700] "GET /JavaWebApplication/response.jsp?subject_id=&submit=Gui+yeu+cau HTTP/1.1" 200 751

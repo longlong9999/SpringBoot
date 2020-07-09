@@ -1,0 +1,14 @@
+package com.example.demo.model;
+
+public class Product {
+	private String id;
+	private String Name;
+	private String Price;
+	private String Quantity;
+	private String Picture;
+	
+	private String Status;
+	
+	
+
+}

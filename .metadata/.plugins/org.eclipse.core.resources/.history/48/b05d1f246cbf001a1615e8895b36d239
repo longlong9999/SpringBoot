@@ -1,0 +1,48 @@
+<!Doctype html>
+<html layout:decorator="/admin/index">
+<head>
+<title>Detail</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div style="margin-left: 450px; margin-top: 250px;" layout:fragment="content">
+
+		<h2>Thﾃｴng tin chi ti蘯ｿt nhﾃ｢n viﾃｪn</h2>
+
+		<table>
+			<tr>
+				<td>ID:</td>
+				<td th:utext="${Employee.id}"></td>
+			</tr>
+
+			<tr>
+				<td>Name:</td>
+				<td th:utext="${Employee.name}"></td>
+			</tr>
+
+			<tr>
+				<td>S盻� ﾄ訴盻㌻ tho蘯｡i:</td>
+				<td th:utext="${Employee.phone}"></td>
+			</tr>
+
+			<tr>
+				<td>Email:</td>
+				<td th:utext="${Employee.email}"></td>
+			</tr>
+
+			<tr>
+				<td>Nﾆ｡i lﾃ�m vi盻㌘:</td>
+				<td th:utext="${Employee.branch}"></td>
+			</tr>
+
+
+		</table>
+
+
+
+
+
+	</div>
+</body>
+</html>

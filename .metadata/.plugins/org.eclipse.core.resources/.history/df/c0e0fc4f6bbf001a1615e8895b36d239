@@ -1,0 +1,37 @@
+<!Doctype html>
+<html  layout:decorator="/admin/index">
+<head>
+    <title>Update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .container{
+            margin-top: 10px;
+            max-width: 750px;
+        }
+    </style>
+</head>
+<body>
+<div class="container"  layout:fragment="content">
+    <h5>Add New Employee</h5>
+    <form action="/admin/update" method="get">
+   
+   
+        Name:<br/>
+        <input type="text" class="form-control" name="name"  th:field="${emp.name}"/>
+        <br/>
+        Phone:<br/>
+        <input type="text" class="form-control" name="phone" th:field="${emp.phone}"/>
+        <br/>
+        Email:<br/>
+        <input type="email" class="form-control" name="email" th:field="${emp.email}"/>
+        <br/>
+        Department:<br/>
+        <input type="text" class="form-control" name="branch" th:field="${emp.branch}"/>
+        <br/>
+        <input type="hidden" name="id" th:value="${emp.id}"/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.EmployeeMapper;
+import com.example.demo.model.Product;
+import com.example.demo.model.ProductMapper;
+
+@Controller
+@RequestMapping("/admin")
+public class ProductController {
+	private ProductMapper proMapper;
+	@Autowired
+	private ProductMapper prmapper;
+	@GetMapping("/productPage")
+	private String productPage(Model model) {
+		model.addAttribute("product",prmapper.findAll()  );
+		
+		return "admin/product";
+		
+	}
+	@RequestMapping("/addForm")
+	private String addForm(Model model) {
+		model.addAttribute("product", new Product());
+		return "admin/addProduct";
+	}
+	@PostMapping("/addproduct")
+	private String addProduct(@ModelAttribute Product pro) {
+		proMapper.insert(product);
+		return"redirect:admin/productPage";
+	}
+	
+
+}

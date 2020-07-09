@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Bank</title>
+ 
+<style>
+th, td {
+    padding: 5px;
+}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+</head>
+ 
+<body>
+
+<!--     <th:block th:include=""></th:block> -->
+ 
+   <h2 style="margin-left: 45%">Doanh Nghiệp</h2>
+    
+    
+    
+    
+ <a href="/add" class="btn btn-success">Thêm mới</a>
+    <table class="table table-striped" style="">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+      <th scope="col">Status</th>
+       <th scope="col">Function</th>
+    </tr>
+  </thead> 
+  <tbody>
+      <tr th:each="yyy : ${doanhnghiep}">
+            <td th:utext="${yyy.id}">..</td>
+            <td th:utext="${yyy.Name}">..</td>
+            <td th:utext="${yyy.Price}">..</td>
+            <td th:utext="${yyy.Quantity}">..</td>
+            <td th:utext="${yyy.Total}">..</td>
+            <td th:utext="${yyy.Status}">..</td>
+            <td>
+            <a href="" class="btn btn-info"> Detail</a>                                    
+            <a href="" class="btn btn-primary">Update</a>          
+            <a href="" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>   
+   
+  </tbody>
+</table>
+
+</body>
+</html>

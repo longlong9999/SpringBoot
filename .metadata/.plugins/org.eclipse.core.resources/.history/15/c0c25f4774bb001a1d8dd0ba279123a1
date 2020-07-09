@@ -1,0 +1,13 @@
+package com.example.demo.model;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface ProductMapper {
+	
+	@Insert("INSERT INTO product(name,price,quantity,picture,stutus)"+ 
+	"VALUES (#{name},#{price},#{quantity},#{picture},#{stutus})")
+	int insert(Product product);
+
+}

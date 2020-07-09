@@ -1,0 +1,72 @@
+package com.example.demo.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.reactive.error.ErrorAttributes;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.model.DangKy;
+import com.example.demo.model.DangNhap;
+import com.example.demo.model.DangNhapMapper;
+import com.example.demo.model.Employee;
+import com.example.demo.model.MD5Library;
+
+@Controller
+public class DangNhapController {
+	@Autowired
+	private DangNhapMapper dnMapper;
+
+	@GetMapping("/")
+	private String dn() {
+		return "redirect:/loginForm";
+	}
+
+	
+	
+	@GetMapping("/loginForm")
+	private String loginForm(Model model) {
+		model.addAttribute("dangnhap", new DangNhap());
+		return "dist/loginn";
+	}
+
+	
+	
+	@PostMapping("/login/admin")
+	private String login(@ModelAttribute("dangnhap") DangNhap dangnhap, Model model) {
+		String pw = MD5Library.md5(dangnhap.getPassword());
+		dangnhap.setPassword(pw);
+		if (dnMapper.count(dangnhap) == true) {
+			return "admin/index";
+		} else {
+
+			return "dist/loginn";
+		}
+	}
+
+	@PostMapping("/register")
+	private String dangKy(@ModelAttribute("dangky") DangKy dangky, Model model) {
+
+		String pw = MD5Library.md5(dangky.getPassword());
+
+		dangky.setPassword(pw);
+
+		if (dnMapper.countt(dangky) == false) {
+
+			dnMapper.insert(dangky);
+			return "";
+		} else {
+
+			return "";
+		}
+
+	}
+
+	
+}

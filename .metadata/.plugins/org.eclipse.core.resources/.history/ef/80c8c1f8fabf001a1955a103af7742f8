@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<head>
+<title>Create New</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+.container {
+	margin-top: 10px;
+	max-width: 750px;
+}
+</style>
+
+</head>
+<body>
+	
+
+</body>
+</html>
